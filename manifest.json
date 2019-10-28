@@ -4,7 +4,7 @@
     "description": "Refreshes the Airlfow DAG run view automagically.",
     "version": "0.1.0",
     "icons": {
-        "48": "resources/icons/auto_refresh_icon.png"
+        "48": "assets/icons/auto_refresh_icon.png"
     },
     "permissions": [
         "*://*/*"
