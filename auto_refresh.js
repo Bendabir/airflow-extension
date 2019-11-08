@@ -11,9 +11,23 @@ if(isOnRightPage){
         }
 
         if(typeof button !== "undefined"){
-            button.click();
+            // Checking if all tasks have been processed
+            let nodes = document.querySelectorAll("g.node");
+            const isDone = Array.from(nodes).map((node) => {
+                return node.className.animVal.split(" ")[2];
+            }).every((status) => {
+                return (status != "no_status") || (status != "running") || (status != "queued");
+            });
 
-            console.log("Refreshing Airflow interface...");
+            if(isDone){
+                // If all processed, clearing the interval and reloading the page
+                clearInterval(autoRefreshFeature);
+                document.location.reload();
+            } else {
+                // Otherwise, faking a click on the refresh button
+                button.click();
+                console.log("Refreshing Airflow interface...");
+            }
         }
     }, 5000);
 }
