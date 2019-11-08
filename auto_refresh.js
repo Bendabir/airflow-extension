@@ -16,7 +16,7 @@ if(isOnRightPage){
             const isDone = Array.from(nodes).map((node) => {
                 return node.className.animVal.split(" ")[2];
             }).every((status) => {
-                return (status != "no_status") || (status != "running") || (status != "queued");
+                return (status != "no_status") && (status != "running") && (status != "queued");
             });
 
             if(isDone){
