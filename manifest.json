@@ -2,7 +2,7 @@
     "manifest_version": 2,
     "name": "Airflow DAG auto-refresh",
     "description": "Refreshes the Airlfow DAG run view automagically.",
-    "version": "0.1.0",
+    "version": "0.2.2",
     "icons": {
         "48": "resources/icons/auto_refresh_icon.png"
     },
